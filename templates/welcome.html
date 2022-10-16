@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Welcome! {% endblock %}
+
+{% block body %}
+
+    <h1>Welcome to my page</h1>
+    <p>
+        This is a demo application for the course
+        <em>Getting started with Fask</em>
+        on <a href="https://www.pluralsight.com">pluralsight</a>
+
+        <img src="static/Reign.jpg" alt="">
+    </p>
+    <ul>
+        {% for card in cards %}
+        
+            <li>
+                <a href="{{url_for('card_view', index = loop.index0)}}">
+                    {{ card.question }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>S
+{% endblock %}   
+
+</html>
